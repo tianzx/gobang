@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 public class GobangActivity extends AppCompatActivity {
 
+    private ChessBoard board = new ChessBoard();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,8 +24,11 @@ public class GobangActivity extends AppCompatActivity {
     }
 
     private void init() {
+        //init this ele
         ImageButton reStart = (ImageButton)this.findViewById(R.id.btn_restart);
         reStart.setOnTouchListener(new MyButtonlistener());
+        //init the chessboard
+        board.initCrossPoints(this.getWindowManager().getDefaultDisplay().getWidth(),this.getWindowManager().getDefaultDisplay().getHeight(),this);
     }
 
     /**
