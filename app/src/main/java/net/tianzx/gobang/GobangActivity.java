@@ -1,5 +1,6 @@
 package net.tianzx.gobang;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class GobangActivity extends AppCompatActivity {
@@ -24,19 +26,38 @@ public class GobangActivity extends AppCompatActivity {
     }
 
     private void init() {
+        ImageView qp = (ImageView)this.findViewById(R.id.backgroundimg);
+        qp.setOnTouchListener(new OnTouchQpExecute());
         //init this ele
         ImageButton reStart = (ImageButton)this.findViewById(R.id.btn_restart);
         reStart.setOnTouchListener(new MyButtonlistener());
+
+        ImageButton resStep = (ImageButton)this.findViewById(R.id.btn_restep);
+        resStep.setOnTouchListener(new MyButtonlistener());
+
+        ImageButton exit = (ImageButton) this.findViewById(R.id.btn_exit);
+        exit.setOnTouchListener(new MyButtonlistener());
         //init the chessboard
-        board.initCrossPoints(this.getWindowManager().getDefaultDisplay().getWidth(),this.getWindowManager().getDefaultDisplay().getHeight(),this);
+        board.initCrossPoints(this.getWindowManager().getDefaultDisplay().getWidth(), this.getWindowManager().getDefaultDisplay().getHeight(), this);
     }
 
+    private class OnTouchQpExecute implements View.OnTouchListener{
+
+        @Override
+        public boolean onTouch(View v, MotionEvent event) {
+            if(event.getAction()==MotionEvent.ACTION_UP) {
+
+                //get position where can be draw
+
+                //draw
+            }
+            return false;
+        }
+    }
     /**
      *   implements listenr ,change the img gravity
      *
      */
-
-
     class MyButtonlistener implements View.OnTouchListener{
 
         @Override
