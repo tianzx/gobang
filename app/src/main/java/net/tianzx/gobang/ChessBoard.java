@@ -88,10 +88,10 @@ public class ChessBoard {
         //set position color
         if(Business.Instance.steps%2 ==0){
             crossPoints[Business.Instance.useX][Business.Instance.useY].setBlackOrWhite(PointModel.WHITE);
-            retPm.setBlackOrWhite(PointModel.WHITE);
+            retPm.setBlackOrWhite(Business.Instance.getNowBlackOrWhite());
         }else{
             crossPoints[Business.Instance.useX][Business.Instance.useY].setBlackOrWhite(PointModel.BLACK);
-            retPm.setBlackOrWhite(PointModel.BLACK);
+            retPm.setBlackOrWhite(Business.Instance.getNowBlackOrWhite());
         }
         return retPm;
     }

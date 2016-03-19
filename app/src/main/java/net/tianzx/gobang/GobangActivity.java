@@ -48,8 +48,12 @@ public class GobangActivity extends AppCompatActivity {
             if(event.getAction()==MotionEvent.ACTION_UP) {
 
                 //get position where can be draw
-
+                PointModel nearPm = board.getNearCanUsePoint((int)event.getX(),(int)event.getY(),GobangActivity.this);
                 //draw
+                if(nearPm !=null) {
+                    Business.Instance.steps++;
+                    Chess.drawChess(nearPm.getX(),nearPm.getY(),Business.Instance.getNowBlackOrWhite(),GobangActivity.this);
+                }
             }
             return false;
         }
