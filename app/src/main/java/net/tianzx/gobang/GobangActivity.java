@@ -55,7 +55,7 @@ public class GobangActivity extends AppCompatActivity {
                     Chess.drawChess(nearPm.getX(),nearPm.getY(),Business.Instance.getNowBlackOrWhite(),GobangActivity.this);
                 }
             }
-            return false;
+            return true;
         }
     }
     /**

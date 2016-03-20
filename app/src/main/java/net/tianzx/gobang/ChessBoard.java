@@ -80,7 +80,7 @@ public class ChessBoard {
         }
         if(retPm.getX()==0||retPm.getY()==0){
             Toast.makeText(ctx,"对不起，请不要瞎点",Toast.LENGTH_LONG);
-            return null;
+            return retPm;
         }
         //set chess on chessboard in use
         crossPoints[Business.Instance.useX][Business.Instance.useY].setInUse(true);
